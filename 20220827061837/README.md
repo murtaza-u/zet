@@ -89,4 +89,4 @@ kubectl edit configmaps myconfig
 ```
 
 
-    #Kubernetes #ConfigMaps #Volumes
+    #k8s

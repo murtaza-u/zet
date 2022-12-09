@@ -1,0 +1,46 @@
+@media (prefers-color-scheme: light) {
+	:root {
+		--bg-color: #F6F8FA;
+		--fg-color: black;
+		--link-color: #0a1172;
+		--visited-color: purple;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-color: #181818;
+		--fg-color: white;
+		--link-color: #63c5da;
+		--visited-color: #ff72ff;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	color: var(--fg-color);
+	background-color: var(--bg-color);
+}
+
+a {
+	text-decoration: none;
+	color: var(--link-color);
+}
+
+a:visited {
+	color: var(--visited-color);
+}
+
+footer {
+	margin-top: 5rem;
+}
+
+#legal {
+	text-align: center;
+	margin: 1rem 0;
+}

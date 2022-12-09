@@ -1,0 +1,39 @@
+on:
+  push:
+    branches: [ "main" ]
+
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Create content directory
+        run: mkdir hugo/content -p
+
+      - name: Add markdown metadata to each zettel
+        run: |
+          while read -r line; do
+            ./zet "$line" > "hugo/content/$line.md"
+          done < <(find . -type d -regextype posix-egrep -regex "./[0-9]{14}" -printf '%P\n')
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.107.0'
+          extended: true
+
+      - name: Hugo build
+        run: cd hugo && hugo --minify
+
+      - name: Netlify Actions
+        uses: nwtgck/actions-netlify@v2.0.0
+        env:
+          NETLIFY_AUTH_TOKEN: ${{  secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          publish-dir: ./hugo/public
+          production-branch: main

@@ -32,4 +32,4 @@ kube-system      kube-scheduler-control            1/1     Running
 * <https://kube-vip.io/>
 * <https://github.com/kubernetes/kubeadm/blob/main/docs/ha-considerations.md>
 
-    #Kubernetes #Pods
+    #k8s

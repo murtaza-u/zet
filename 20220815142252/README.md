@@ -40,4 +40,4 @@ minikube ip
 In my case, Minikube's subnet is 192.168.49.0/24. Hence I have reserved
 the IPs 192.168.49.100 - 192.168.49.105 for load balancers.
 
-    #k8s #minikube #metallb #loadbalancer
+    #k8s #minikube

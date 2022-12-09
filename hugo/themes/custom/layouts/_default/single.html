@@ -1,0 +1,14 @@
+{{ define "css" }}
+<link href="/css/global.css" rel="stylesheet">
+<link href="/css/single.css" rel="stylesheet">
+{{ end }}
+
+{{ define "main" }}
+<header>
+    <h1>{{ .Title }}</h1>
+</header>
+
+<article>
+    {{ .Content }}
+</article>
+{{ end }}

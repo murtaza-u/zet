@@ -21,4 +21,4 @@ sudo apt update
 sudo apt install <software>
 ```
 
-    #apt #iso #debian #ubuntu #linux
+    #linux

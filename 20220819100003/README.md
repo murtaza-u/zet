@@ -58,4 +58,4 @@ spec:
 ---
 ```
 
-    #Kubernetes #volumes #Bitnami
+    #k8s

@@ -1,0 +1,22 @@
+baseURL = 'https://zet.murtazau.xyz/'
+languageCode = 'en'
+title = 'Zettelkasten - Murtaza Udaipurwala'
+theme = "custom"
+author = "Murtaza Udaipurwala (murtaza@murtazau.xyz)"
+copyright = "Creative Commons Zero v1.0 Universal"
+
+[params]
+    og_image = "https://murtazau.xyz/static/profile.jpg"
+    og_type = "blog"
+    github = "https://github.com/murtaza-u"
+    twitter = "@murtaza_u_"
+
+[markup]
+    [markup.highlight]
+        style = 'dracula'
+        tabWidth = 4
+
+[outputFormats]
+    [outputFormats.RSS]
+        mediaType = "application/rss+xml"
+        baseName = "feed"

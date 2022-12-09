@@ -1,0 +1,12 @@
+{{- if isset .Params "tags" -}}
+{{- $tagsLen := len .Params.tags -}}
+{{- if gt $tagsLen 0 -}}
+<div style="clear:both" class=taglist>
+    {{- with .Site.Params.relatedtext }}{{ . }}<br>{{ end -}}
+    {{- range $k, $v := .Params.tags -}}
+    {{- $url := printf "/tags/%s" (. | urlize | lower) -}}
+    <a class="tag" id="tag_{{ . | lower }}" href="{{ $url }}">#{{ . | title }}</a>
+    {{- end -}}
+</div>
+{{- end -}}
+{{- end }}

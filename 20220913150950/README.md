@@ -132,4 +132,4 @@ gpg --decrypt secret.txt.gpg.gpg
 gpg --decrypt secret.txt.gpg
 ```
 
-    #GPG #cryptography #encryption
+    #cryptography

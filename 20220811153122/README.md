@@ -22,4 +22,4 @@
 /join #CHANNEL_NAME
 ```
 
-    #twitch #irc
+    #irc

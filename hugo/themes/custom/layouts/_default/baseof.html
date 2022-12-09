@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ .Title }}</title>
+    {{- partial "meta.html" . -}}
+    {{- partial "favicon.html" . -}}
+    {{- block "css" . }}{{- end }}
+</head>
+<body>
+    {{- block "main" . }}{{- end }}
+    {{- partial "tags.html" . -}}
+    {{- partial "footer.html" . -}}
+</body>
+</html>

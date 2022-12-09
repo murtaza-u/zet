@@ -54,4 +54,4 @@ def factorize(n):
 print(factorize(105327569))
 ```
 
-    #factorization #math #algorithm
+    #math #python

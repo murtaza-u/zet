@@ -27,4 +27,4 @@ EOF
 sudo apt update
 ```
 
-    #kali #linux #repository
+    #linux

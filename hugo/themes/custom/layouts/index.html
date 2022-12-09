@@ -1,0 +1,41 @@
+{{ define "css" }}
+<link href="/css/global.css" rel="stylesheet">
+<link href="/css/list.css" rel="stylesheet">
+{{ end }}
+
+{{ define "main" }}
+<header>
+    <h1>Zettelkasten</h1>
+</header>
+
+<section id="preface">
+    <p>
+	  Zettelkasten is a personal tool for thinking and writing. It is
+	  method developed by Niklas Luhmann. It consists of a collection
+	  of knowledge slips (zettels). The following zettels are written
+	  and published by <a href="https://murtazau.xyz">Murtaza Udaipurwala</a>.
+	</p>
+    <br>
+	<p>You can also subscribe via <a href="/feed.xml">RSS</a>.</p>
+</section>
+
+<main>
+    <ul>
+        {{- range.Pages }}
+        <li class="item">
+            {{- if .Date }}
+            <div class="date">
+                <time datetime="{{ .Date.Format "2006-01-02 15:04:05" }}">
+                    {{ .Date.Format "2006-01-02 15:04:05" }}
+                </time>
+            </div>
+            {{ end -}}
+
+            <div class="title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </div>
+        </li>
+        {{- end }}
+    </ul>
+</main>
+{{- end }}

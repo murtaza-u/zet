@@ -1,0 +1,38 @@
+#!/bin/bash
+
+hugo() {
+    id="$1"
+    path="$id/README.md"
+
+    # extracting title
+    IFS= read -r title < "$path"
+    title="${title##*# }" # trim leading '#'
+
+    # extracting hashtags
+    tags="$(tail -1 "$path")"
+    tags="${tags#"${tags%%[![:space:]]*}"}" # trim leading whitespace
+
+    # converting tags into an array of tags
+    taglist=""
+    read -a tags <<< "$tags"
+    for tag in "${tags[@]}"; do
+        if [[ -z "$taglist" ]]; then
+            taglist="[${tag##*#}"
+            continue
+        fi
+
+        taglist="$taglist, ${tag##*#}"
+    done
+    taglist="$taglist]"
+
+    # trimming first and last line from file
+    content="$(sed -e '$d' -e '1d' "$path")"
+
+    # 2022-07-16 07:54:33
+    date="${id:0:4}-${id:4:2}-${id:6:2} ${id:8:2}:${id:10:2}:${id:12:2}"
+
+    printf -- "---\ntitle: %s\ndate: %s\ntags: %s\n---\n%s" \
+        "$title" "$date" "$taglist" "$content"
+}
+
+hugo "$@"
