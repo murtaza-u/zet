@@ -4,7 +4,23 @@
     <title>{{ .Title }}</title>
     {{- partial "meta.html" . -}}
     {{- partial "favicon.html" . -}}
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
     {{- block "css" . }}{{- end }}
+
+    <style type="text/css" media="screen">
+      @media (prefers-color-scheme: dark) {
+        {{ partial "css/syntax-dark.css" . | safeCSS }}
+      }
+      @media (prefers-color-scheme: light) {
+        {{ partial "css/syntax-light.css" . | safeCSS }}
+      }
+    </style>
 </head>
 <body>
     {{- block "main" . }}{{- end }}

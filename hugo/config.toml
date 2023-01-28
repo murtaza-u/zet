@@ -13,7 +13,7 @@ copyright = "Creative Commons Zero v1.0 Universal"
 
 [markup]
     [markup.highlight]
-        style = 'dracula'
+        noclasses = false
         tabWidth = 4
 
 [outputFormats]
