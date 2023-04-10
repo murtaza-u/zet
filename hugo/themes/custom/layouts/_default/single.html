@@ -1,14 +1,14 @@
 {{ define "css" }}
-<link href="/css/global.css" rel="stylesheet">
-<link href="/css/single.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+<link href="/css/style.css" rel="stylesheet">
 {{ end }}
 
 {{ define "main" }}
-<header>
+<header class="center">
     <h1>{{ .Title }}</h1>
 </header>
 
-<article>
+<article class="container">
     {{ .Content }}
 </article>
 {{ end }}

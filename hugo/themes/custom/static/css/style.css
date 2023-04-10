@@ -1,0 +1,23 @@
+html * {
+  font-family: 'Iosevka Web';
+}
+
+.center {
+    text-align: center;
+}
+
+article li, main li {
+    list-style: disc;
+}
+
+article {
+  box-shadow: none;
+}
+
+.taglist a {
+  margin: 0 .2em 0 .2em;
+}
+
+code span {
+  font-size: 1.15em;
+}
